@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<jaxb:bindings xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:annox="http://annox.dev.java.net"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/jaxb http://www.oracle.com/webfolder/technetwork/jsc/xml/ns/jaxb/bindingschema_2_0.xsd" version="2.1">
+
+	<jaxb:globalBindings>
+    	<jaxb:serializable uid="1" />
+  	</jaxb:globalBindings>
+  
+	<jaxb:bindings schemaLocation="graphml-structure.xsd">
+		<jaxb:bindings node="xs:complexType[@name='graphml.type']">
+			<annox:annotate>
+				<annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" name="graphml" namespace="http://graphml.graphdrawing.org/xmlns/graphml"/>
+			</annox:annotate>
+		</jaxb:bindings>
+	</jaxb:bindings>
+
+	<jaxb:bindings schemaLocation="ygraphics.xsd">
+		<jaxb:bindings node="xs:complexType[@name='ShapeNode.type']">
+			<annox:annotate>
+				<annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" name="ShapeNode" namespace="http://www.yworks.com/xml/graphml" />
+			</annox:annotate>
+		</jaxb:bindings>
+		<jaxb:bindings node="xs:complexType[@name='ImageNode.type']">
+			<annox:annotate>
+				<annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" name="ImageNode" namespace="http://www.yworks.com/xml/graphml" />
+			</annox:annotate>
+		</jaxb:bindings>
+		<jaxb:bindings node="xs:complexType[@name='GroupNode.type']">
+			<annox:annotate>
+				<annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" name="GroupNode" namespace="http://www.yworks.com/xml/graphml" />
+			</annox:annotate>
+		</jaxb:bindings>
+		<jaxb:bindings node="xs:complexType[@name='GenericNode.type']">
+			<annox:annotate>
+				<annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" name="GenericNode" namespace="http://www.yworks.com/xml/graphml" />
+			</annox:annotate>
+		</jaxb:bindings>
+		<jaxb:bindings node="xs:complexType[@name='GenericGroupNode.type']">
+			<annox:annotate>
+				<annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" name="GenericGroupNode" namespace="http://www.yworks.com/xml/graphml" />
+			</annox:annotate>
+		</jaxb:bindings>
+		<jaxb:bindings node="xs:complexType[@name='ProxyShapeNode.type']">
+			<annox:annotate>
+				<annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" name="ProxyShapeNode" namespace="http://www.yworks.com/xml/graphml" />
+			</annox:annotate>
+		</jaxb:bindings>
+<!--
+		<jaxb:bindings node="xs:element[@name='ProxyAutoBoundsNode']">
+			<annox:annotate>
+				<annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" name="ProxyAutoBoundsNode" namespace="http://www.yworks.com/xml/graphml" />
+			</annox:annotate>
+		</jaxb:bindings>
+-->		
+		<jaxb:bindings node="xs:complexType[@name='PolyLineEdge.type']">
+			<annox:annotate>
+				<annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" name="PolyLineEdge" namespace="http://www.yworks.com/xml/graphml" />
+			</annox:annotate>
+		</jaxb:bindings>
+		<jaxb:bindings node="xs:complexType[@name='ArcEdge.type']">
+			<annox:annotate>
+				<annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" name="ArcEdge" namespace="http://www.yworks.com/xml/graphml" />
+			</annox:annotate>
+		</jaxb:bindings>
+<!--
+		<jaxb:bindings node="xs:element[@name='BezierEdge']">
+			<annox:annotate>
+				<annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" name="BezierEdge" namespace="http://www.yworks.com/xml/graphml" />
+			</annox:annotate>
+		</jaxb:bindings>
+		<jaxb:bindings node="xs:element[@name='SplineEdge']">
+			<annox:annotate>
+				<annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" name="SplineEdge" namespace="http://www.yworks.com/xml/graphml" />
+			</annox:annotate>
+		</jaxb:bindings>
+-->
+		<jaxb:bindings node="xs:complexType[@name='QuadCurveEdge.type']">
+			<annox:annotate>
+				<annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" name="QuadCurveEdge" namespace="http://www.yworks.com/xml/graphml" />
+			</annox:annotate>
+		</jaxb:bindings>
+		<jaxb:bindings node="xs:complexType[@name='GenericEdge.type']">
+			<annox:annotate>
+				<annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" name="GenericEdge" namespace="http://www.yworks.com/xml/graphml" />
+			</annox:annotate>
+		</jaxb:bindings>
+		<jaxb:bindings node="xs:complexType[@name='ResourceBlock.type']">
+			<annox:annotate>
+				<annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" name="Resources" namespace="http://www.yworks.com/xml/graphml" />
+			</annox:annotate>
+		</jaxb:bindings>
+	</jaxb:bindings>
+
+	<jaxb:bindings schemaLocation="yprocessors.xsd">
+		<jaxb:bindings node="xs:complexType[@name='Postprocessors.type']">
+			<annox:annotate>
+				<annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" name="Postprocessors" namespace="http://www.yworks.com/xml/graphml" />
+			</annox:annotate>
+		</jaxb:bindings>
+	</jaxb:bindings>
+
+</jaxb:bindings>

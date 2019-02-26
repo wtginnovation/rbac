@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>de.vsfexperts.rbac.it</groupId>
+	<artifactId>generate</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+
+	<properties>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+		<resource.delimiter>@</resource.delimiter>
+		<maven.compiler.source>${java.version}</maven.compiler.source>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.target>${java.version}</maven.compiler.target>
+	</properties>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>de.vsfexperts.rbac</groupId>
+				<artifactId>rbac-maven-plugin</artifactId>
+				<version>@rbac-maven-plugin.version@</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<privilegeClassName>P</privilegeClassName>
+					<roleClassName>R</roleClassName>
+					<packageName>dummy</packageName>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>

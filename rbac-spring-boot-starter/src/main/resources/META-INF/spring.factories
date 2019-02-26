@@ -1,0 +1,5 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+de.vsfexperts.rbac.spring.RbacMappingAutoConfiguration,\
+de.vsfexperts.rbac.spring.RbacOauth2AutoConfiguration, \
+de.vsfexperts.rbac.spring.RbacPropertiesAutoConfiguration,\
+de.vsfexperts.rbac.spring.RbacUserDetailsServiceAutoConfiguration

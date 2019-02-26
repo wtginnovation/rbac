@@ -1,0 +1,6 @@
+rbac:
+  configLocation: rbac-test.yaml
+  springRoles: false
+  roleClaimFieldname: roleClaimFieldname
+  userFieldname: userFieldname
+  

@@ -1,0 +1,32 @@
+<html>
+<body>
+	<a href="auth">Display authentication</a> <a href="logout">Logout</a><br><br><br>
+	<a href="order">List orders</a><br><br>
+	<form id="orderForm" action="/order" method="post" >
+		<input type="submit" value="Update Order" />
+		<input type="text" name="theOrder" id="theOrder" value="the order" />
+	</form>
+	<table>
+		<tr>
+			<th>User</th>
+			<th>Password</th>
+			<th>Privilege</th>
+		</tr>
+		<tr>
+			<td>admin</td>
+			<td>admin</td>
+			<td>list_orders,update_orders,delete_orders</td>
+		</tr>
+		<tr>
+			<td>user</td>
+			<td>user</td>
+			<td>list_orders</td>
+		</tr>
+		<tr>
+			<td>none</td>
+			<td>none</td>
+			<td>&nbsp;</td>
+		</tr>
+	</table>
+</body>
+</html>

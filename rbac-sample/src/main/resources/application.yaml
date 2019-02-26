@@ -1,0 +1,17 @@
+# Configuration options and their default values:
+#
+#rbac:
+#  configLocation: rbac.yaml
+#  springRoles: true
+## used by oauth2 integration in order to map/extract fields from jwt:
+#  roleClaimFieldname: authorities 
+#  userFieldname: user_name
+
+# In order to use default userdetailsService of Spring Boot: 
+# - remove exclusion of UserDetailsServiceAutoConfiguration in Application.java 
+# - cleanup SecurityConfiguration#configure(AuthenticationManagerBuilder): replace content of method with "auth.userDetailsService(rbacUserDetailService);"
+# - uncomment default roles below
+#  
+#spring.security.user.roles: [admin, user, none]
+
+spring.mvc.favicon.enabled: true

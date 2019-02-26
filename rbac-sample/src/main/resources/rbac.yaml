@@ -1,0 +1,12 @@
+role: user
+privileges:
+  - list_orders
+---
+role: admin
+privileges:
+  - list_orders
+  - update_orders
+  - delete_orders
+---
+role: none
+  
