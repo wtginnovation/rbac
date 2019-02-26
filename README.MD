@@ -1,3 +1,23 @@
+Table of Contents
+=================
+
+   * [RBAC Services](#rbac-services)
+      * [Overview](#overview)
+      * [Usage](#usage)
+         * [Configuration](#configuration)
+         * [Maven Plugin](#maven-plugin)
+            * [Generate goal](#generate-goal)
+               * [Configuration Options](#configuration-options)
+            * [Graph goal](#graph-goal)
+               * [Configuration Options](#configuration-options-1)
+         * [Sample](#sample)
+         * [Spring Boot integration](#spring-boot-integration)
+            * [UserDetailsService](#userdetailsservice)
+            * [OAuth2](#oauth2)
+            * [Application.yaml](#applicationyaml)
+         * [Sample](#sample-1)
+      * [Modules](#modules)
+
 # RBAC Services
 
 ## Overview
