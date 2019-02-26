@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/vsfexperts/rbac.svg)](https://travis-ci.org/vsfexperts/rbac)
+[![codecov](https://codecov.io/gh/vsfexperts/rbac/branch/develop/graph/badge.svg)](https://codecov.io/gh/vsfexperts/rbac)
+
 Table of Contents
 =================
 
