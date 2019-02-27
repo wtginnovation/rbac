@@ -27,8 +27,8 @@ Table of Contents
 [RBAC](https://en.wikipedia.org/wiki/Role-based_access_control) is a best practice in order to implement a permission schema. Roles 
 are basically mapped to a set of privileges, which are used to determine access to certain parts of the application. The default implementation of spring security 
 doesn't include this indirection. Roles are identical to privileges. This is making it hard to modify the existing structure later on. In most cases 
-roles do change rarely, but the privileges do change a lot due to e.g. extensions/refactorings of the existing codebase. RBAC is helping in this case, 
-as the mapping is kept within the application. This project is providing some tools in order to implement this approach.
+roles do change rarely, but the privileges do change a lot due to e.g. extensions/refactorings of the existing codebase. This project is supposed to help this case, 
+as the mapping of roles to privileges is kept within the application. This project is providing some tools in order to implement this approach.
 
 Larger organizations do often have dedicated teams in order to manage the auth infrastructure. This could be based on active 
 directory groups, ldap, an oauth2 provider or something else. Normally, you'd just maintain your roles in those systems and use 
