@@ -32,11 +32,11 @@ as the mapping is kept within the application. This project is providing some to
 
 Larger organizations do often have dedicated teams in order to manage the auth infrastructure. This could be based on active 
 directory groups, ldap, an oauth2 provider or something else. Normally, you'd just maintain your roles in those systems and use 
-this project in order to map the roles to privileges, which are specific to your applications. This is keeping things separated. 
+this project in order to map the roles to privileges, which are specific to your application. This is keeping things separate. 
 The auth team is able to maintain access on a coarse level (roles, e.g. admin, user) and your application is able to decide what 
 that means exactly (in terms of access to functionality/endpoints). You'll just have to add new privileges/map roles to them in 
-the config file (see [Configuration](#configuration)), if you're extending the functionality of your app (e.g. a new report is added.
-Who's allowed to see it?).
+the config file (see [Configuration](#configuration)), if you're extending the functionality of your app (e.g. a new report/endpoint 
+is added. Who's allowed to see/use it?).
 
 ## Usage
 ### Configuration
