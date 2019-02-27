@@ -87,12 +87,13 @@ public abstract class BaseMojo extends AbstractMojo {
 
 			final boolean successfulUpdate = lastModifiedTracker.setLastModified(rbacFile.lastModified());
 			if (!successfulUpdate) {
-				throw new MojoExecutionException("Couldn't update timestamp of " + rbacFile.getAbsolutePath());
+				throw new MojoExecutionException(
+						"Couldn't update timestamp of " + lastModifiedTracker.getAbsolutePath());
 			}
 
 			return requiresExecution;
 
-		} catch (final MojoFailureException e) {
+		} catch (final MojoFailureException | MojoExecutionException e) {
 			throw e;
 		} catch (final Exception e2) {
 			throw new MojoExecutionException(e2.getMessage(), e2);
