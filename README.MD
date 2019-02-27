@@ -172,7 +172,7 @@ Here's the full set of configurable parameters and their default values in appli
 rbac:
   configLocation: rbac.yaml # classpath location of configuration file
   springRoles: true # generate spring compatible privileges/constants (prefixed with ROLE_)
-  roleClaimFieldname: authorities # field in JWT which is used to extract a list of roles (either comma separated String or Collection)
+  roleClaimFieldname: authorities # field in JWT which is used to extract a set of roles
   userFieldname: user_name # field in JWT which is used to extract the name of the current user
 ``` 
 
