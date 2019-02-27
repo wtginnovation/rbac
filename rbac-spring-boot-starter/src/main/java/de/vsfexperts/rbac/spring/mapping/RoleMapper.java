@@ -40,7 +40,9 @@ public class RoleMapper {
 		return mapRolesToPrivileges(roles, privilegeConverter);
 	}
 
-	public <T> Set<T> mapRolesToPrivileges(final Collection<String> roles, final Function<String, T> converter) {
+	public <T> Set<T> mapRolesToPrivileges(final Collection<String> roles,
+			final Function<String, ? extends T> converter) {
+
 		final Set<T> allPrivileges = new HashSet<>();
 		final Map<String, Set<String>> mapping = mappingSupplier.get();
 
