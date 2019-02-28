@@ -6,6 +6,7 @@ Table of Contents
 
    * [Overview](#overview)
    * [Usage](#usage)
+      * [Build](#build)
       * [Configuration](#configuration)
       * [Maven Plugin](#maven-plugin)
          * [Generate goal](#generate-goal)
@@ -37,6 +38,10 @@ the config file (see [Configuration](#configuration)), if you're extending the f
 is added. Who's allowed to see/use it?).
 
 ## Usage
+
+### Build
+The project has to be built with Java 11. The binaries are compatible with JDK 8. Maven 3.6 was used in development.
+
 ### Configuration
 This project is based on a static mapping file, which is used to map roles to privileges
 ``` yaml
@@ -193,4 +198,4 @@ The following modules do exist:
 
 ## Limitations
 - Support of Java 11 modules has been deactivated temporarily, as the spring boot oauth starter isn't ready yet (split packages)
-- Graph maven plugin will generate an invalid graph if you're using roles & privileges with same name (e.g. role: user privileges: -user). The graph will only contain 1 node, which will point to itsself.
+- Graph maven plugin will generate an invalid graph, if you're using roles & privileges with same name (e.g. role: user privileges: - user). The graph will only contain 1 node, which will point to itsself.
