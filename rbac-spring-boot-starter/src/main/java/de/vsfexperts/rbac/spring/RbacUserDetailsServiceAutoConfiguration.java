@@ -45,6 +45,7 @@ public class RbacUserDetailsServiceAutoConfiguration {
 
 	@Bean("rbacUserDetailsService")
 	@Primary
+	@Autowired
 	@ConditionalOnMissingBean(UserDetailsService.class)
 	public RbacUserDetailsService partiallyInitializedRbacUserDetailService(final RoleMapper roleMapper)
 			throws IOException {

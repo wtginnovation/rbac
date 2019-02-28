@@ -30,6 +30,7 @@ public class RbacOauth2AutoConfiguration {
 
 	@Bean
 	@Primary
+	@Autowired
 	@ConditionalOnMissingBean
 	public RbacUserAuthenticationConverter rbacUserAuthenticationConverter(final RoleMapper roleMapper)
 			throws IOException {
