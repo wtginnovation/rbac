@@ -13,7 +13,7 @@ Table of Contents
             * [Configuration Options](#configuration-options)
          * [Graph goal](#graph-goal)
             * [Configuration Options](#configuration-options-1)
-      * [Sample](#sample)
+         * [Sample](#sample)
       * [Spring Boot integration](#spring-boot-integration)
          * [UserDetailsService](#userdetailsservice)
          * [OAuth2](#oauth2)
@@ -115,7 +115,7 @@ There's also a goal to generate a graph in graphml format, which can be edited w
 |outputDirectory          | target folder, default: ${project.build.directory}/generated-sources/rbac            |
 |reportFileName           | location of graph, relative to output folder, default: META-INF/role-mapping.graphml |
 
-### Sample
+#### Sample
 ``` xml
 <plugin>
 	<groupId>de.vsfexperts.rbac</groupId>
