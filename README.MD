@@ -4,24 +4,22 @@
 Table of Contents
 =================
 
-   * [RBAC Services](#rbac-services)
-      * [Overview](#overview)
-      * [Usage](#usage)
-         * [Configuration](#configuration)
-         * [Maven Plugin](#maven-plugin)
-            * [Generate goal](#generate-goal)
-               * [Configuration Options](#configuration-options)
-            * [Graph goal](#graph-goal)
-               * [Configuration Options](#configuration-options-1)
-         * [Sample](#sample)
-         * [Spring Boot integration](#spring-boot-integration)
-            * [UserDetailsService](#userdetailsservice)
-            * [OAuth2](#oauth2)
-            * [Application.yaml](#applicationyaml)
-         * [Sample](#sample-1)
-      * [Modules](#modules)
-
-# RBAC Services
+   * [Overview](#overview)
+   * [Usage](#usage)
+      * [Configuration](#configuration)
+      * [Maven Plugin](#maven-plugin)
+         * [Generate goal](#generate-goal)
+            * [Configuration Options](#configuration-options)
+         * [Graph goal](#graph-goal)
+            * [Configuration Options](#configuration-options-1)
+      * [Sample](#sample)
+      * [Spring Boot integration](#spring-boot-integration)
+         * [UserDetailsService](#userdetailsservice)
+         * [OAuth2](#oauth2)
+         * [Application.yaml](#applicationyaml)
+      * [Sample](#sample-1)
+   * [Modules](#modules)
+   * [Limitations](#limitations)
 
 ## Overview
 [RBAC](https://en.wikipedia.org/wiki/Role-based_access_control) is a best practice in order to implement a permission schema. Roles 
@@ -192,3 +190,7 @@ The following modules do exist:
 |rbac-sample              | Spring boot sample app                        |
 |rbac-services            | Parent pom                                    |
 |rbac-spring-boot-starter | Integration with Spring Boot                  |
+
+## Limitations
+- Support of Java 11 modules has been deactivated temporarily, as the spring boot oauth starter isn't ready yet (split packages)
+- Graph maven plugin will generate an invalid graph if you're using roles & privileges with same name (e.g. role: user privileges: -user). The graph will only contain 1 node, which will point to itsself.
