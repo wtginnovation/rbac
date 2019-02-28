@@ -40,7 +40,7 @@ is added. Who's allowed to see/use it?).
 ## Usage
 
 ### Build
-The project has to be built with Java 11. The binaries are compatible with JDK 8. Maven 3.6 was used in development.
+The project has to be built with Java 11. The binaries are compatible with JDK 8 and above. Maven 3.5.3 was used in development, although more current versions should be fine too.
 
 ### Configuration
 This project is based on a static mapping file, which is used to map roles to privileges
