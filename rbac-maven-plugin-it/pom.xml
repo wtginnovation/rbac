@@ -17,6 +17,7 @@
 
 	<properties>
 		<maven-verifier.version>1.6</maven-verifier.version>
+
 		<rbac-maven-plugin.version>${project.version}</rbac-maven-plugin.version>
 	</properties>
 

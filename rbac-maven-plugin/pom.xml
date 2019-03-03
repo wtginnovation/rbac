@@ -176,12 +176,6 @@
 			<scope>provided</scope>
 		</dependency>
 
-		<dependency>
-			<groupId>org.apache.maven.shared</groupId>
-			<artifactId>maven-verifier</artifactId>
-			<version>1.6</version>
-		</dependency>
-
 	</dependencies>
 
 </project>
