@@ -16,10 +16,10 @@ import de.vsfexperts.rbac.spring.RbacMappingAutoConfiguration;
 import de.vsfexperts.rbac.spring.RbacPropertiesAutoConfiguration;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = { ExistingRoleMapperAutoConfigurationIT.OverrideConfiguration.class,
+@SpringBootTest(classes = { ExistingRoleMapperIT.OverrideConfiguration.class,
 		RbacMappingAutoConfiguration.class, RbacPropertiesAutoConfiguration.class })
 @ActiveProfiles("test")
-public class ExistingRoleMapperAutoConfigurationIT {
+public class ExistingRoleMapperIT {
 
 	@Configuration
 	public static class OverrideConfiguration {

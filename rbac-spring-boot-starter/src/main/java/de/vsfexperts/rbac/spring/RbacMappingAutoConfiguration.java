@@ -26,7 +26,7 @@ public class RbacMappingAutoConfiguration {
 
 	@Bean
 	@ConditionalOnMissingBean
-	public RbacMappingSupplier yamlMappingLoader() {
+	public RbacMappingSupplier rbacMappingSupplier() {
 		final ClassPathResource configLocation = new ClassPathResource(properties.getConfigLocation());
 		final YamlMappingSupplier mappingSupplier = new YamlMappingSupplier(configLocation);
 
