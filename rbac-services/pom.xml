@@ -7,7 +7,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.1.5.RELEASE</version>
+		<version>2.1.7.RELEASE</version>
 	</parent>
 
 	<groupId>de.vsfexperts.rbac</groupId>
@@ -24,9 +24,9 @@
 		<java.version>11</java.version>
 		<jaxb2-basics-annotate.version>1.1.0</jaxb2-basics-annotate.version>
 		<jaxb-runtime.version>2.3.2</jaxb-runtime.version>
-		<spring-security-oauth2-autoconfigure.version>2.1.5.RELEASE</spring-security-oauth2-autoconfigure.version>
+		<spring-security-oauth2-autoconfigure.version>2.1.7.RELEASE</spring-security-oauth2-autoconfigure.version>
 
-		<jacoco-maven-plugin.version>0.8.3</jacoco-maven-plugin.version>
+		<jacoco-maven-plugin.version>0.8.4</jacoco-maven-plugin.version>
 		<maven-jaxb2-plugin.version>0.14.0</maven-jaxb2-plugin.version>
 	</properties>
 
