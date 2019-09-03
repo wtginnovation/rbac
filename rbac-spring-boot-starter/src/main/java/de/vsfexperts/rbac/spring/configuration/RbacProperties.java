@@ -12,10 +12,6 @@ public class RbacProperties {
 
 	private boolean springRoles = true;
 
-	private String roleClaimFieldname = "authorities";
-
-	private String userFieldname = "user_name";
-
 	public String getConfigLocation() {
 		return configLocation;
 	}
@@ -30,22 +26,6 @@ public class RbacProperties {
 
 	public void setSpringRoles(final boolean springRoles) {
 		this.springRoles = springRoles;
-	}
-
-	public String getRoleClaimFieldname() {
-		return roleClaimFieldname;
-	}
-
-	public void setRoleClaimFieldname(final String roleClaimFieldname) {
-		this.roleClaimFieldname = roleClaimFieldname;
-	}
-
-	public String getUserFieldname() {
-		return userFieldname;
-	}
-
-	public void setUserFieldname(final String userFieldname) {
-		this.userFieldname = userFieldname;
 	}
 
 }

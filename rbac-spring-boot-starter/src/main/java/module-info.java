@@ -19,23 +19,20 @@ open module de.vsfexperts.rbac.spring {
 	requires transitive spring.boot.configuration.processor;
 	requires transitive spring.boot.starter;
 	requires transitive spring.boot.starter.logging;
-	requires static transitive spring.boot.starter.security;
 	requires transitive spring.context;
 	requires transitive spring.core;
 	requires transitive spring.expression;
 	requires transitive spring.jcl;
+	
+	requires static transitive spring.boot.starter.security;
 	requires static transitive spring.security.config;
 	requires static transitive spring.security.core;
-	requires static transitive spring.security.jwt;
-	requires static transitive spring.security.oauth2;
-	requires static transitive spring.security.oauth2.autoconfigure;
 	requires static transitive spring.security.web;
 	requires static transitive spring.web;
 
 	exports de.vsfexperts.rbac.spring;
 	exports de.vsfexperts.rbac.spring.configuration;
 	exports de.vsfexperts.rbac.spring.mapping;
-	exports de.vsfexperts.rbac.spring.oauth2;
 	exports de.vsfexperts.rbac.spring.supplier;
 	exports de.vsfexperts.rbac.spring.userdetails;
 }

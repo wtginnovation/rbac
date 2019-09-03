@@ -31,20 +31,4 @@ public class RbacPropertiesTest {
 		assertThat(properties.isSpringRoles(), is(value));
 	}
 
-	@Test
-	public void testRoleClaimFieldname() {
-		final String value = "roleClaimFieldname";
-		properties.setRoleClaimFieldname(value);
-
-		assertThat(properties.getRoleClaimFieldname(), is(value));
-	}
-
-	@Test
-	public void testUserFieldname() {
-		final String value = "userFieldname";
-		properties.setUserFieldname(value);
-
-		assertThat(properties.getUserFieldname(), is(value));
-	}
-
 }

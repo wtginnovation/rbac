@@ -12,19 +12,17 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.security.oauth2.provider.token.UserAuthenticationConverter;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import de.vsfexperts.rbac.spring.configuration.RbacProperties;
 import de.vsfexperts.rbac.spring.mapping.RoleMapper;
-import de.vsfexperts.rbac.spring.oauth2.RbacUserAuthenticationConverter;
 import de.vsfexperts.rbac.spring.supplier.RbacMappingSupplier;
 import de.vsfexperts.rbac.spring.userdetails.RbacUserDetailsService;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = { RbacOauth2AutoConfiguration.class, RbacUserDetailsServiceAutoConfiguration.class,
-		RbacMappingAutoConfiguration.class, RbacPropertiesAutoConfiguration.class })
+@SpringBootTest(classes = { RbacUserDetailsServiceAutoConfiguration.class, RbacMappingAutoConfiguration.class,
+		RbacPropertiesAutoConfiguration.class })
 @ActiveProfiles("test")
 public class AutoConfigurationIT {
 
@@ -36,9 +34,6 @@ public class AutoConfigurationIT {
 
 	@Autowired
 	private RbacMappingSupplier mappingSupplier;
-
-	@Autowired
-	private RbacUserAuthenticationConverter converter;
 
 	@Autowired
 	private RoleMapper roleMapper;
@@ -57,12 +52,6 @@ public class AutoConfigurationIT {
 	@Test
 	public void testRoleMapper() {
 		assertThat(roleMapper.isSpringRoles(), is(true));
-	}
-
-	@Test
-	public void testUserAuthenticationConverter() {
-		assertThat(converter.getUserFieldname(), is(UserAuthenticationConverter.USERNAME));
-		assertThat(converter.getRoleClaimFieldname(), is(UserAuthenticationConverter.AUTHORITIES));
 	}
 
 	@Test

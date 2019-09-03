@@ -1,4 +1,4 @@
-package de.vsfexperts.rbac.configuration.domain.io;
+package de.vsfexperts.rbac.configuration.io;
 
 import static org.hamcrest.CoreMatchers.hasItem;
 import static org.hamcrest.CoreMatchers.is;

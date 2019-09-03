@@ -24,8 +24,6 @@ public class RbacPropertiesIT {
 	public void testConfiguredValues() {
 		assertThat(properties.getConfigLocation(), is("rbac-test.yaml"));
 		assertThat(properties.isSpringRoles(), is(false));
-		assertThat(properties.getRoleClaimFieldname(), is("roleClaimFieldname"));
-		assertThat(properties.getUserFieldname(), is("userFieldname"));
 	}
 
 }

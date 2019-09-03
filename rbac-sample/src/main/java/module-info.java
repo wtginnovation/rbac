@@ -23,5 +23,13 @@ open module de.vsfexperts.rbac.sample {
 	requires spring.boot.starter.json;
 	requires spring.boot.starter.tomcat;
 	requires spring.boot.starter.web;
+	requires spring.core;
 	requires spring.webmvc;
+	
+	requires spring.boot.starter.security;
+	requires spring.security.config;
+	requires spring.security.core;
+	requires spring.security.web;
+	requires spring.web;
+	
 }

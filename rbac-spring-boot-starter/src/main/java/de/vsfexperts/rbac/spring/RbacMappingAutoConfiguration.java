@@ -1,13 +1,17 @@
 package de.vsfexperts.rbac.spring;
 
+import java.io.IOException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.AutoConfigureAfter;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 import org.springframework.core.io.ClassPathResource;
 
 import de.vsfexperts.rbac.spring.configuration.RbacProperties;
+import de.vsfexperts.rbac.spring.mapping.RbacAuthoritiesMapper;
 import de.vsfexperts.rbac.spring.mapping.RoleMapper;
 import de.vsfexperts.rbac.spring.supplier.CachingSupplier;
 import de.vsfexperts.rbac.spring.supplier.LoggingSupplier;
@@ -42,6 +46,14 @@ public class RbacMappingAutoConfiguration {
 		mapper.setSpringRoles(properties.isSpringRoles());
 
 		return mapper;
+	}
+
+	@Bean
+	@Primary
+	@Autowired
+	@ConditionalOnMissingBean
+	public RbacAuthoritiesMapper rbacAuthoritiesMapper(final RoleMapper roleMapper) throws IOException {
+		return new RbacAuthoritiesMapper(roleMapper);
 	}
 
 }

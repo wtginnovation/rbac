@@ -1,6 +1,8 @@
 package de.vsfexperts.rbac.spring.mapping;
 
 import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.CoreMatchers.not;
+import static org.hamcrest.CoreMatchers.nullValue;
 import static org.junit.Assert.assertThat;
 
 import org.junit.Test;
@@ -21,9 +23,17 @@ public class DefaultRoleMapperIT {
 	@Autowired
 	private RoleMapper mapper;
 
+	@Autowired
+	private RbacAuthoritiesMapper rbacAuthoritiesMapper;
+
 	@Test
 	public void testDefaultValues() {
 		assertThat(mapper.isSpringRoles(), is(true));
+	}
+
+	@Test
+	public void testRbacAuthoritiesMapper() {
+		assertThat(rbacAuthoritiesMapper, is(not(nullValue())));
 	}
 
 }

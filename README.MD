@@ -147,26 +147,23 @@ existing one in order to provide the mapping to privileges dynamically. This is 
 are just treated as roles. The provided `RbacUserDetailsService` doesn't touch the other attributes of the `UserDetails` object. It's only replacing the authorities with the ones configured.
 
 #### OAuth2
-There's also support for OAuth2. The auto configuration (`RbacOauth2AutoConfiguration`) will register a custom `UserAuthenticationConverter` (`RbacUserAuthenticationConverter`), which will 
-treat the value of a field in JWT as a source of roles. The default name of the field is authorities, but it can be overridden in application.yaml. The Converter can be injected into a 
-`AccessTokenConverter`, e.g. the DefaultAccessTokenConverter via a setter (setUserTokenConverter())
+There's also support for OAuth2/other provides via providing a `GrantedAuthoritiesMapper` (`RbacAuthoritiesMapper`). You'll just have to configure it in `WebSecurityConfigurerAdapter`. 
+See [StackOverlow Post](https://stackoverflow.com/questions/55609083/how-to-set-user-authorities-from-user-claims-return-by-an-oauth-server-in-spring) for details.
 
 ```java
 
+@Configuration
+public class AppConfig extends WebSecurityConfigurerAdapter {
+
 	@Autowired
-	private RbacUserAuthenticationConverter rbacTokenConverter;
+	private RbacAuthoritiesMapper authoritiesMapper;
 
-	@Bean
-	@Primary
-	public AccessTokenConverter accessTokenConverter() {
-		final DefaultAccessTokenConverter tokenConverter = new DefaultAccessTokenConverter();
-		tokenConverter.setUserTokenConverter(rbacTokenConverter);
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        http.oauth2Login().userInfoEndpoint().userAuthoritiesMapper(authoritiesMapper);
+        super.configure(http);
+    }
 
-		final JwtAccessTokenConverter jwtAccessTokenConverter = new JwtAccessTokenConverter();
-		jwtAccessTokenConverter.setAccessTokenConverter(tokenConverter);
-
-		return jwtAccessTokenConverter;
-	}
 ```
 
 #### Application.yaml
@@ -175,8 +172,6 @@ Here's the full set of configurable parameters and their default values in appli
 rbac:
   configLocation: rbac.yaml # classpath location of configuration file
   springRoles: true # generate spring compatible privileges/constants (prefixed with ROLE_)
-  roleClaimFieldname: authorities # field in JWT which is used to extract a set of roles
-  userFieldname: user_name # field in JWT which is used to extract the name of the current user
 ``` 
 
 
@@ -197,5 +192,4 @@ The following modules do exist:
 |rbac-spring-boot-starter | Integration with Spring Boot                  |
 
 ## Limitations
-- Support of Java 11 modules has been deactivated temporarily, as the spring boot oauth starter isn't ready yet (split packages)
 - Graph maven plugin will generate an invalid graph, if you're using roles & privileges with same name (e.g. role: user privileges: - user). The graph will only contain 1 node, which will point to itsself.
