@@ -148,15 +148,15 @@ are just treated as roles. The provided `RbacUserDetailsService` doesn't touch t
 
 #### OAuth2
 There's also support for OAuth2/other provides via providing a `GrantedAuthoritiesMapper` (`RbacAuthoritiesMapper`). You'll just have to configure it in `WebSecurityConfigurerAdapter`. 
-See [StackOverlow Post](https://stackoverflow.com/questions/55609083/how-to-set-user-authorities-from-user-claims-return-by-an-oauth-server-in-spring) for details.
+See [StackOverflow Post](https://stackoverflow.com/questions/55609083/how-to-set-user-authorities-from-user-claims-return-by-an-oauth-server-in-spring) for details.
 
 ```java
 
 @Configuration
 public class AppConfig extends WebSecurityConfigurerAdapter {
 
-	@Autowired
-	private RbacAuthoritiesMapper authoritiesMapper;
+    @Autowired
+    private RbacAuthoritiesMapper authoritiesMapper;
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
