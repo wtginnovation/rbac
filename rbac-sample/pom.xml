@@ -17,6 +17,7 @@
 
 	<properties>
 		<automaticModuleName>de.vsfexperts.rbac.sample</automaticModuleName>
+		<mainClass>de.vsfexperts.rbac.sample.Application</mainClass>
 	</properties>
 
 	<build>
@@ -86,6 +87,9 @@
 				<configuration>
 					<outputDirectory>${project.build.directory}/modules</outputDirectory>
 					<archive>
+						<manifest>
+							<mainClass>${mainClass}</mainClass>
+						</manifest>
 						<manifestEntries>
 							<Automatic-Module-Name>${automaticModuleName}</Automatic-Module-Name>
 						</manifestEntries>
