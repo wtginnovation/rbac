@@ -147,7 +147,7 @@ existing one in order to provide the mapping to privileges dynamically. This is 
 are just treated as roles. The provided `RbacUserDetailsService` doesn't touch the other attributes of the `UserDetails` object. It's only replacing the authorities with the ones configured.
 
 #### OAuth2
-There's also support for OAuth2/other provides via providing a `GrantedAuthoritiesMapper` (`RbacAuthoritiesMapper`). You'll just have to configure it in `WebSecurityConfigurerAdapter`. 
+There's also support for OAuth2 and others via providing a `GrantedAuthoritiesMapper` (`RbacAuthoritiesMapper`). You'll just have to configure it in your `WebSecurityConfigurerAdapter`. 
 See [StackOverflow Post](https://stackoverflow.com/questions/55609083/how-to-set-user-authorities-from-user-claims-return-by-an-oauth-server-in-spring) for details.
 
 ```java
