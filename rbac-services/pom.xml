@@ -24,6 +24,7 @@
 		<java.version>11</java.version>
 		<jaxb2-basics-annotate.version>1.1.0</jaxb2-basics-annotate.version>
 		<jaxb-runtime.version>2.3.2</jaxb-runtime.version>
+		<tomcat.version>9.0.26</tomcat.version>
 
 		<jacoco-maven-plugin.version>0.8.4</jacoco-maven-plugin.version>
 		<maven-jaxb2-plugin.version>0.14.0</maven-jaxb2-plugin.version>

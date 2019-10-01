@@ -5,8 +5,8 @@ open module de.vsfexperts.rbac.spring {
 	requires transitive jul.to.slf4j;
 	requires transitive logback.classic;
 	requires transitive logback.core;
-	requires transitive log4j.over.slf4j;
-	requires transitive slf4j.api;
+	requires transitive org.apache.log4j;
+	requires transitive org.slf4j;
 
 	requires transitive java.annotation;
 	requires transitive org.apache.logging.log4j;

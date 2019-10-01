@@ -4,7 +4,7 @@ open module de.vsfexperts.rbac.configuration {
 	requires transitive org.apache.commons.lang3;
 	requires transitive logback.classic;
 	requires transitive logback.core;
-	requires transitive slf4j.api;
+	requires transitive org.slf4j;
 	requires transitive spring.core;
 	requires transitive spring.jcl;
 	

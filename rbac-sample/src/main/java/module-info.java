@@ -4,9 +4,9 @@ open module de.vsfexperts.rbac.sample {
 	requires transitive de.vsfexperts.rbac.spring;
 
 	requires jackson.annotations;
-	requires tomcat.embed.core;
-	requires tomcat.embed.el;
-	requires tomcat.embed.websocket;
+	requires org.apache.tomcat.embed.core;
+	requires org.apache.tomcat.embed.jasper.el;
+	requires org.apache.tomcat.embed.websocket;
 
 	requires com.fasterxml.classmate;
 	requires com.fasterxml.jackson.core;
