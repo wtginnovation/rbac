@@ -1,6 +1,6 @@
 package de.vsfexperts.rbac.sample.rest;
 
-import static org.springframework.http.MediaType.APPLICATION_JSON_UTF8_VALUE;
+import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class AuthenticationController {
 
-	@GetMapping(value = "/auth", produces = APPLICATION_JSON_UTF8_VALUE)
+	@GetMapping(value = "/auth", produces = APPLICATION_JSON_VALUE)
 	@PreAuthorize("permitAll()")
 	public Authentication listOrders() {
 		return SecurityContextHolder.getContext().getAuthentication();
