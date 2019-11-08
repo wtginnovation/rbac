@@ -11,7 +11,7 @@ open module de.vsfexperts.rbac.spring {
 	requires transitive java.annotation;
 	requires transitive org.apache.logging.log4j;
 	requires transitive org.apache.logging.slf4j;
-	requires transitive snakeyaml;
+	requires transitive org.yaml.snakeyaml;
 	requires transitive spring.aop;
 	requires transitive spring.beans;
 	requires transitive spring.boot;

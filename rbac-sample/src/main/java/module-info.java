@@ -3,12 +3,12 @@ open module de.vsfexperts.rbac.sample {
 	requires transitive de.vsfexperts.rbac.configuration;
 	requires transitive de.vsfexperts.rbac.spring;
 
-	requires jackson.annotations;
 	requires org.apache.tomcat.embed.core;
 	requires org.apache.tomcat.embed.jasper.el;
 	requires org.apache.tomcat.embed.websocket;
 
 	requires com.fasterxml.classmate;
+	requires com.fasterxml.jackson.annotation;
 	requires com.fasterxml.jackson.core;
 	requires com.fasterxml.jackson.databind;
 	requires com.fasterxml.jackson.datatype.jdk8;
