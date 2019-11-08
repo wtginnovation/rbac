@@ -119,8 +119,16 @@
              <id>repository.spring.release</id>
              <name>Spring GA Repository</name>
              <url>http://repo.spring.io/release</url>
-	    </repository>
-	</repositories>
+        </repository>
+    </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+             <id>repository.spring.release</id>
+             <name>Spring GA Repository</name>
+             <url>http://repo.spring.io/release</url>
+        </pluginRepository>
+    </pluginRepositories>
 
 	<build>
 		<pluginManagement>
