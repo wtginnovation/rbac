@@ -2,6 +2,7 @@
 
 [![Build Status](https://github.com/vsfexperts/rbac/workflows/CI/badge.svg?branch=develop)](https://github.com/vsfexperts/rbac/actions)
 [![codecov](https://codecov.io/gh/vsfexperts/rbac/branch/develop/graph/badge.svg)](https://codecov.io/gh/vsfexperts/rbac)
+[![Sonarcloud Status](https://sonarcloud.io/api/project_badges/measure?project=de.vsfexperts.rbac:rbac-services&metric=alert_status)](https://sonarcloud.io/dashboard?id=de.vsfexperts.rbac:rbac-services)
 [![DepShield Badge](https://depshield.sonatype.org/badges/vsfexperts/rbac/depshield.svg)](https://depshield.github.io)
 
 ## Table of Contents
