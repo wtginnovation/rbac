@@ -24,6 +24,7 @@
 		<jaxb-runtime.version>2.3.2</jaxb-runtime.version>
 
 		<jacoco-maven-plugin.version>0.8.4</jacoco-maven-plugin.version>
+		<maven-deploy-plugin.version>3.0.0-M1</maven-deploy-plugin.version>
 		<maven-jaxb2-plugin.version>0.14.0</maven-jaxb2-plugin.version>
 	</properties>
 
@@ -176,7 +177,7 @@
 				</plugin>
 				<plugin>
 					<artifactId>maven-deploy-plugin</artifactId>
-					<version>3.0.0-M1</version>
+					<version>${maven-deploy-plugin.version}</version>
 				</plugin>
 				<plugin>
 					<groupId>de.vsfexperts.rbac</groupId>
