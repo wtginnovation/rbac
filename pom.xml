@@ -16,7 +16,7 @@
 	<packaging>pom</packaging>
 
 	<name>RBAC Services</name>
-	<description>Collection of tools to simplify usage of rbac</description>
+	<description>Collection of tools to simplify usage of rbac pattern</description>
 
 	<properties>
 		<java.version>11</java.version>
@@ -38,22 +38,22 @@
 				<activeByDefault>true</activeByDefault>
 			</activation>
 			<modules>
-				<module>../rbac-configuration</module>
-				<module>../rbac-maven-plugin</module>
-				<module>../rbac-maven-plugin-it</module>
-				<module>../rbac-sample</module>
-				<module>../rbac-spring-boot-starter</module>
+				<module>rbac-configuration</module>
+				<module>rbac-maven-plugin</module>
+				<module>rbac-maven-plugin-it</module>
+				<module>rbac-sample</module>
+				<module>rbac-spring-boot-starter</module>
 			</modules>
 		</profile>
 		<profile>
 			<id>release</id>
 			<modules>
-				<module>../rbac-configuration</module>
-				<module>../rbac-distribution</module>
-				<module>../rbac-maven-plugin</module>
-				<module>../rbac-maven-plugin-it</module>
-				<module>../rbac-sample</module>
-				<module>../rbac-spring-boot-starter</module>
+				<module>rbac-configuration</module>
+				<module>rbac-distribution</module>
+				<module>rbac-maven-plugin</module>
+				<module>rbac-maven-plugin-it</module>
+				<module>rbac-sample</module>
+				<module>rbac-spring-boot-starter</module>
 			</modules>
 		</profile>
 		<profile>

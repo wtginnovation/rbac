@@ -19,7 +19,7 @@ jobs:
         java-version: 1.11
 
     - name: Build with Maven
-      run: mvn -B -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn -DskipTests=true -f rbac-services -Prelease clean install
+      run: mvn -B -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn -DskipTests=true -Prelease clean install
 
     - name: Deploy to Github Packages
-      run: mvn -B -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn -Dmaven.wagon.http.pool=false -DskipTests=true -Dgithub.user=${{ secrets.github_user }} -Dgithub.password=${{ secrets.github_token }} -f rbac-services -s rbac-services/settings.xml -Prelease deploy 
+      run: mvn -B -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn -Dmaven.wagon.http.pool=false -DskipTests=true -Dgithub.user=${{ secrets.github_user }} -Dgithub.password=${{ secrets.github_token }} -s settings.xml -Prelease deploy 
