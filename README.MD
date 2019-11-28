@@ -1,6 +1,6 @@
 # Rbac Services
 
-[![Build Status](https://github.com/vsfexperts/rbac/workflows/CI/badge.svg)](https://github.com/vsfexperts/rbac/actions)
+[![Build Status](https://github.com/vsfexperts/rbac/workflows/CI/badge.svg?branch=develop)](https://github.com/vsfexperts/rbac/actions)
 [![codecov](https://codecov.io/gh/vsfexperts/rbac/branch/develop/graph/badge.svg)](https://codecov.io/gh/vsfexperts/rbac)
 [![DepShield Badge](https://depshield.sonatype.org/badges/vsfexperts/rbac/depshield.svg)](https://depshield.github.io)
 
