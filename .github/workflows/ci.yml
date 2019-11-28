@@ -18,7 +18,13 @@ jobs:
     - name: Build with Maven
       run: mvn -B -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn -Pcodecoverage,release clean install
       
-    - name: Codecov
+    - name: Codecov Scan
       uses: codecov/codecov-action@v1.0.4
       with:
         token: ${{ secrets.codecov_token }}
+        
+    - name: SonarCloud Scan
+      uses: SonarSource/sonarcloud-github-action@v1.1
+      env:
+        GITHUB_TOKEN: ${{ secrets.github_password }}
+        SONAR_TOKEN: ${{ secrets.sonar_token }}
