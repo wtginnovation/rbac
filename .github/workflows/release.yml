@@ -2,8 +2,8 @@ name: Deploy artifacts
 
 on:
   push:
-    branches:
-      - master
+    tags:
+      - '*'
 
 jobs:
   build:
