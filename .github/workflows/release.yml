@@ -1,6 +1,6 @@
-name: Java CI
+name: Deploy artifacts
 
-on: [push]
+on:
   push:
     branches:
       - master
