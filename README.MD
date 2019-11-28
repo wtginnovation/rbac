@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/vsfexperts/rbac.svg)](https://travis-ci.org/vsfexperts/rbac)
 [![codecov](https://codecov.io/gh/vsfexperts/rbac/branch/develop/graph/badge.svg)](https://codecov.io/gh/vsfexperts/rbac)
+[![DepShield Badge](https://depshield.sonatype.org/badges/owner/repository/depshield.svg)](https://depshield.github.io)
 
 ## Table of Contents
 
