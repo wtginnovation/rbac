@@ -25,3 +25,6 @@ jobs:
         
     - name: SonarCloud Scan
       run: mvn -B -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn -Dsonar.login=${{ secrets.sonar_token }} -Pcodecoverage,sonar,release sonar:sonar
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        SONAR_TOKEN: ${{ secrets.sonar_token }}
