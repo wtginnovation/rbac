@@ -7,7 +7,7 @@
 	<parent>
 		<groupId>de.vsfexperts.rbac</groupId>
 		<artifactId>rbac-services</artifactId>
-		<version>1.2.1</version>
+		<version>1.2.2-SNAPSHOT</version>
 		<relativePath>../rbac-services</relativePath>
 	</parent>
 
