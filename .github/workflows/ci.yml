@@ -24,4 +24,4 @@ jobs:
         token: ${{ secrets.codecov_token }}
         
     - name: SonarCloud Scan
-      run: mvn -B -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn -Dsonar.login=${{ secrets.sonar_token }} -Pcodecoverage,release verify org.sonarsource.scanner.maven:sonar
+      run: mvn -B -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn -Dsonar.login=${{ secrets.sonar_token }} -Psonar,release verify sonar:sonar
