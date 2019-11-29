@@ -203,7 +203,7 @@ The following modules do exist:
 |rbac-maven-plugin        | Maven code/graph generator plugin             |
 |rbac-maven-plugin-it     | Integration tests of maven plugin             |
 |rbac-sample              | Spring boot sample app                        |
-|rbac-spring-boot-starter | Integration with Spring Boot                  |
+|spring-boot-starter-rbac | Integration with Spring Boot                  |
 
 ## Limitations
 

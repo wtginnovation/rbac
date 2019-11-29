@@ -47,7 +47,7 @@
 				<module>rbac-maven-plugin</module>
 				<module>rbac-maven-plugin-it</module>
 				<module>rbac-sample</module>
-				<module>rbac-spring-boot-starter</module>
+				<module>spring-boot-starter-rbac</module>
 			</modules>
 		</profile>
 		<profile>
@@ -58,7 +58,7 @@
 				<module>rbac-maven-plugin</module>
 				<module>rbac-maven-plugin-it</module>
 				<module>rbac-sample</module>
-				<module>rbac-spring-boot-starter</module>
+				<module>spring-boot-starter-rbac</module>
 			</modules>
 		</profile>
 		<profile>
@@ -262,7 +262,7 @@
 			</dependency>
 			<dependency>
 				<groupId>de.vsfexperts.rbac</groupId>
-				<artifactId>rbac-spring-boot-starter</artifactId>
+				<artifactId>spring-boot-starter-rbac</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 

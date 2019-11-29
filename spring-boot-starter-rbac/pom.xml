@@ -10,7 +10,7 @@
 		<version>1.2.2-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>rbac-spring-boot-starter</artifactId>
+	<artifactId>spring-boot-starter-rbac</artifactId>
 	<name>RBAC Spring Boot Starter</name>
 	<description>Spring Boot integration</description>
 

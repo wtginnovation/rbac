@@ -120,7 +120,7 @@
 	<dependencies>
 		<dependency>
 			<groupId>de.vsfexperts.rbac</groupId>
-			<artifactId>rbac-spring-boot-starter</artifactId>
+			<artifactId>spring-boot-starter-rbac</artifactId>
 		</dependency>
 
 		<dependency>
