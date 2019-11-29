@@ -17,7 +17,11 @@ import com.yworks.xml.graphml.ShapeTypeType;
 /**
  * Common set of tools to create parts of a graphml file (e.g. node, edge)
  */
-public class GraphTools {
+public final class GraphTools {
+
+	private GraphTools() {
+		// do not instantiate
+	}
 
 	public static GraphType graph() {
 		final GraphType graph = new GraphType();

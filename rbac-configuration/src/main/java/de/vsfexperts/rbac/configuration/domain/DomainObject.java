@@ -7,7 +7,7 @@ import org.apache.commons.lang3.builder.HashCodeBuilder;
  * Base class of all domain objects, providing some common functionality.
  *
  */
-public class DomainObject {
+public abstract class DomainObject {
 
 	@Override
 	public int hashCode() {

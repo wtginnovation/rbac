@@ -18,6 +18,10 @@ import de.vsfexperts.rbac.configuration.domain.RoleMapping;
  */
 public final class MappingTools {
 
+	private MappingTools() {
+		// do not instantiate
+	}
+
 	public static Set<String> getPrivilegeNames(final Collection<RoleMapping> mappings) {
 		requireNonNull(mappings);
 		return mappings.stream().flatMap(m -> m.getPrivilegeNames().stream()).collect(toCollection(TreeSet::new));
@@ -30,7 +34,7 @@ public final class MappingTools {
 
 	/**
 	 * Convert {@link RoleMapping}s to simple Map
-	 * 
+	 *
 	 * @param mappings to convert
 	 * @return map with key = role, value = privileges
 	 */

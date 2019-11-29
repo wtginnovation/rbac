@@ -1,7 +1,5 @@
 package de.vsfexperts.rbac.spring;
 
-import java.io.IOException;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,7 +33,7 @@ public class RbacUserDetailsServiceAutoConfiguration {
 	@Autowired
 	@ConditionalOnBean(UserDetailsService.class)
 	public RbacUserDetailsService fullyInitializedRbacUserDetailService(final UserDetailsService userDetailsService,
-			final RoleMapper roleMapper) throws IOException {
+			final RoleMapper roleMapper) {
 
 		final RbacUserDetailsService rbacUserDetailService = rbacUserDetailsService(roleMapper);
 		rbacUserDetailService.setUserDetailService(userDetailsService);
@@ -47,8 +45,7 @@ public class RbacUserDetailsServiceAutoConfiguration {
 	@Primary
 	@Autowired
 	@ConditionalOnMissingBean(UserDetailsService.class)
-	public RbacUserDetailsService partiallyInitializedRbacUserDetailService(final RoleMapper roleMapper)
-			throws IOException {
+	public RbacUserDetailsService partiallyInitializedRbacUserDetailService(final RoleMapper roleMapper) {
 
 		LOG.warn("Partially configured RbacUserDetailsService. You'll have to inject a UserDetailsService later on.");
 		return rbacUserDetailsService(roleMapper);

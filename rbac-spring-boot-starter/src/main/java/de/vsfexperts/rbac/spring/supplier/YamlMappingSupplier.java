@@ -36,9 +36,7 @@ public class YamlMappingSupplier implements RbacMappingSupplier {
 
 	private Map<String, Set<String>> loadMapping() throws IOException {
 		final Set<RoleMapping> mapping = new YamlLoader().load(mappingLocation);
-		final Map<String, Set<String>> roleMap = asMap(mapping);
-
-		return roleMap;
+		return asMap(mapping);
 	}
 
 }

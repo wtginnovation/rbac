@@ -1,7 +1,5 @@
 package de.vsfexperts.rbac.spring;
 
-import java.io.IOException;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.AutoConfigureAfter;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
@@ -52,7 +50,7 @@ public class RbacMappingAutoConfiguration {
 	@Primary
 	@Autowired
 	@ConditionalOnMissingBean
-	public RbacAuthoritiesMapper rbacAuthoritiesMapper(final RoleMapper roleMapper) throws IOException {
+	public RbacAuthoritiesMapper rbacAuthoritiesMapper(final RoleMapper roleMapper) {
 		return new RbacAuthoritiesMapper(roleMapper);
 	}
 

@@ -19,9 +19,6 @@ public class RoleMapping extends DomainObject implements Comparable<RoleMapping>
 	private Role role;
 	private SortedSet<Privilege> privileges = new TreeSet<>();
 
-	public RoleMapping() {
-	}
-
 	public Role getRole() {
 		return role;
 	}

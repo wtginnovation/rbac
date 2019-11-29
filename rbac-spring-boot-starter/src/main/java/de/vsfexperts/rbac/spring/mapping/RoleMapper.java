@@ -34,7 +34,7 @@ public class RoleMapper {
 		if (springRoles) {
 			privilegeConverter = p -> new SimpleGrantedAuthority(SPRING_ROLE_PREFIX + p);
 		} else {
-			privilegeConverter = p -> new SimpleGrantedAuthority(p);
+			privilegeConverter = SimpleGrantedAuthority::new;
 		}
 
 		return mapRolesToPrivileges(roles, privilegeConverter);
