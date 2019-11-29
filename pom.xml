@@ -27,13 +27,15 @@
 		<maven-deploy-plugin.version>3.0.0-M1</maven-deploy-plugin.version>
 		<maven-jaxb2-plugin.version>0.14.0</maven-jaxb2-plugin.version>
 		<sonar-maven-plugin.version>3.7.0.1746</sonar-maven-plugin.version>
-		
-		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
-		<sonar.organization>vsfexperts</sonar.organization>
+
+		<!-- Keep in there. Required for surefire/failsafe agent config passthrough -->
+		<argLine></argLine>
+		<failsafeArgLine></failsafeArgLine>
+		<surefireArgLine></surefireArgLine>
 	</properties>
 
 	<scm>
-        <url>https://maven.pkg.github.com/vsfexperts/rbac</url>
+		<url>https://maven.pkg.github.com/vsfexperts/rbac</url>
 	</scm>
 
 	<profiles>
@@ -75,6 +77,9 @@
 								<goals>
 									<goal>prepare-agent</goal>
 								</goals>
+								<configuration>
+									<propertyName>surefireArgLine</propertyName>
+								</configuration>
 							</execution>
 							<execution>
 								<id>preprare-integration-tests</id>
@@ -82,16 +87,19 @@
 								<goals>
 									<goal>prepare-agent-integration</goal>
 								</goals>
+								<configuration>
+									<propertyName>failsafeArgLine</propertyName>
+								</configuration>
 							</execution>
 							<execution>
-								<id>report</id>
+								<id>report-tests</id>
 								<phase>prepare-package</phase>
 								<goals>
 									<goal>report</goal>
 								</goals>
 							</execution>
 							<execution>
-								<id>report-integration</id>
+								<id>report-integration-tests</id>
 								<phase>post-integration-test</phase>
 								<goals>
 									<goal>report-integration</goal>
@@ -104,6 +112,10 @@
 		</profile>
 		<profile>
 			<id>sonar</id>
+			<properties>
+				<sonar.host.url>https://sonarcloud.io</sonar.host.url>
+				<sonar.organization>vsfexperts</sonar.organization>
+			</properties>
 			<build>
 				<plugins>
 					<plugin>
@@ -142,28 +154,28 @@
 	</profiles>
 
 	<repositories>
-	    <repository>
-             <id>repository.spring.release</id>
-             <name>Spring GA Repository</name>
-             <url>https://repo.spring.io/release</url>
-        </repository>
-    </repositories>
+		<repository>
+			<id>repository.spring.release</id>
+			<name>Spring GA Repository</name>
+			<url>https://repo.spring.io/release</url>
+		</repository>
+	</repositories>
 
-    <pluginRepositories>
-        <pluginRepository>
-             <id>repository.spring.release</id>
-             <name>Spring GA Repository</name>
-             <url>https://repo.spring.io/release</url>
-        </pluginRepository>
-    </pluginRepositories>
+	<pluginRepositories>
+		<pluginRepository>
+			<id>repository.spring.release</id>
+			<name>Spring GA Repository</name>
+			<url>https://repo.spring.io/release</url>
+		</pluginRepository>
+	</pluginRepositories>
 
-    <distributionManagement>
-        <repository>
-            <id>github</id>
-            <name>GitHub vsfexperts Apache Maven Packages</name>
-            <url>https://maven.pkg.github.com/vsfexperts/rbac</url>
-        </repository>
-    </distributionManagement>
+	<distributionManagement>
+		<repository>
+			<id>github</id>
+			<name>GitHub vsfexperts Apache Maven Packages</name>
+			<url>https://maven.pkg.github.com/vsfexperts/rbac</url>
+		</repository>
+	</distributionManagement>
 
 	<build>
 		<pluginManagement>
@@ -208,6 +220,20 @@
 				<plugin>
 					<artifactId>maven-deploy-plugin</artifactId>
 					<version>${maven-deploy-plugin.version}</version>
+				</plugin>
+				<plugin>
+					<artifactId>maven-surefire-plugin</artifactId>
+					<configuration>
+						<argLine>@{argLine} @{surefireArgLine}
+							-DjacocoArgs="@{surefireArgLine}" </argLine>
+					</configuration>
+				</plugin>
+				<plugin>
+					<artifactId>maven-failsafe-plugin</artifactId>
+					<configuration>
+						<argLine>@{argLine} @{failsafeArgLine}
+							-DjacocoArgs="@{failsafeArgLine}" </argLine>
+					</configuration>
 				</plugin>
 				<plugin>
 					<groupId>de.vsfexperts.rbac</groupId>

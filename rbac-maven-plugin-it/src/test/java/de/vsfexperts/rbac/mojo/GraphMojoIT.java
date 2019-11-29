@@ -26,7 +26,7 @@ public class GraphMojoIT {
 	public void testExecution() throws Exception {
 		final File testDir = ResourceExtractor.simpleExtractResources(getClass(), "/graph");
 
-		final Verifier verifier = new Verifier(testDir.getAbsolutePath());
+		final Verifier verifier = new VerifierBuilder().withBaseDirectoy(testDir).build();
 
 		try {
 			verifier.executeGoals(asList("clean", "install"));
