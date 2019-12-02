@@ -133,7 +133,10 @@
 			<properties>
 				<sonar.host.url>https://sonarcloud.io</sonar.host.url>
 				<sonar.organization>vsfexperts</sonar.organization>
+				<sonar.java.binaries>target/classes</sonar.java.binaries>
+				<sonar.java.test.binaries>target/test-classes</sonar.java.test.binaries>
 				<sonar.java.libraries>target/libraries</sonar.java.libraries>
+				<sonar.java.test.libraries>target/libraries</sonar.java.test.libraries>
 			</properties>
 			<build>
 				<plugins>
