@@ -55,6 +55,11 @@
 
 	<dependencies>
 		<dependency>
+			<groupId>de.vsfexperts.rbac</groupId>
+			<artifactId>rbac-maven-plugin</artifactId>
+		</dependency>
+
+		<dependency>
 			<groupId>org.apache.maven.shared</groupId>
 			<artifactId>maven-verifier</artifactId>
 			<version>${maven-verifier.version}</version>
