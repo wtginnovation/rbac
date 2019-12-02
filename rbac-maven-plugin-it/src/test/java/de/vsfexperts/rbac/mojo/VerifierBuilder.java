@@ -15,8 +15,11 @@ public class VerifierBuilder {
 	}
 
 	public Verifier build() throws VerificationException {
+		final String jacocoArguments = System.getProperty("jacocoArgs", "");
+
 		final Verifier verifier = new Verifier(baseDirectory.getAbsolutePath());
-		verifier.setEnvironmentVariable("MAVEN_OPTS", System.getProperty("jacocoArgs", ""));
+		verifier.setEnvironmentVariable("MAVEN_OPTS", jacocoArguments);
+		verifier.setSystemProperty("jacocoArgs", jacocoArguments);
 
 		return verifier;
 	}

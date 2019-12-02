@@ -91,7 +91,7 @@
 									<propertyName>failsafeArgLine</propertyName>
 								</configuration>
 							</execution>
-							<execution>
+							<!--execution>
 								<id>report-tests</id>
 								<phase>prepare-package</phase>
 								<goals>
@@ -104,7 +104,7 @@
 								<goals>
 									<goal>report-integration</goal>
 								</goals>
-							</execution>
+							</execution-->
 						</executions>
 					</plugin>
 				</plugins>
@@ -224,15 +224,13 @@
 				<plugin>
 					<artifactId>maven-surefire-plugin</artifactId>
 					<configuration>
-						<argLine>@{argLine} @{surefireArgLine}
-							-DjacocoArgs="@{surefireArgLine}" </argLine>
+						<argLine>@{argLine} @{surefireArgLine} -DjacocoArgs="@{surefireArgLine}" </argLine>
 					</configuration>
 				</plugin>
 				<plugin>
 					<artifactId>maven-failsafe-plugin</artifactId>
 					<configuration>
-						<argLine>@{argLine} @{failsafeArgLine}
-							-DjacocoArgs="@{failsafeArgLine}" </argLine>
+						<argLine>@{argLine} @{failsafeArgLine} -DjacocoArgs="@{failsafeArgLine}" </argLine>
 					</configuration>
 				</plugin>
 				<plugin>

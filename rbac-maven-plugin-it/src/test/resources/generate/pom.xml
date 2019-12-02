@@ -36,6 +36,34 @@
 					<packageName>dummy</packageName>
 				</configuration>
 			</plugin>
+			<plugin>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>@maven-surefire-plugin.version@</version>
+				<configuration>
+					<argLine>@jacocoArgs@ </argLine>
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-failsafe-plugin</artifactId>
+				<version>@maven-failsafe-plugin.version@</version>
+				<configuration>
+					<argLine>@jacocoArgs@ </argLine>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<version>@jacoco-maven-plugin.version@</version>
+				<executions>
+					<execution>
+						<id>instrument</id>
+						<phase>compile</phase>
+						<goals>
+							<goal>instrument</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
 	</build>
 
