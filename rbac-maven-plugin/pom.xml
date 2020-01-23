@@ -7,7 +7,7 @@
 	<parent>
 		<groupId>de.vsfexperts.rbac</groupId>
 		<artifactId>rbac-services</artifactId>
-		<version>2.2.4-SNAPSHOT</version>
+		<version>2.2.4.RELEASE</version>
 	</parent>
 
 	<artifactId>rbac-maven-plugin</artifactId>
