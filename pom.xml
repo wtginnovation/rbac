@@ -7,7 +7,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.2.1.RELEASE</version>
+		<version>2.2.4.RELEASE</version>
 	</parent>
 
 	<groupId>de.vsfexperts.rbac</groupId>
@@ -27,11 +27,6 @@
 		<maven-deploy-plugin.version>3.0.0-M1</maven-deploy-plugin.version>
 		<maven-jaxb2-plugin.version>0.14.0</maven-jaxb2-plugin.version>
 		<sonar-maven-plugin.version>3.7.0.1746</sonar-maven-plugin.version>
-
-		<!-- Keep in there. Required for surefire/failsafe agent config passthrough -->
-		<argLine></argLine>
-		<failsafeArgLine></failsafeArgLine>
-		<surefireArgLine></surefireArgLine>
 	</properties>
 
 	<scm>
@@ -72,56 +67,17 @@
 						<artifactId>jacoco-maven-plugin</artifactId>
 						<executions>
 							<execution>
-								<id>prepare-tests</id>
 								<phase>process-test-classes</phase>
 								<goals>
 									<goal>prepare-agent</goal>
 								</goals>
-								<configuration>
-									<propertyName>surefireArgLine</propertyName>
-								</configuration>
 							</execution>
 							<execution>
-								<id>preprare-integration-tests</id>
-								<phase>pre-integration-test</phase>
-								<goals>
-									<goal>prepare-agent-integration</goal>
-								</goals>
-								<configuration>
-									<propertyName>failsafeArgLine</propertyName>
-								</configuration>
-							</execution>
-							<!--execution>
-								<id>report-tests</id>
-								<phase>prepare-package</phase>
+								<id>report</id>
+								<phase>post-integration-test</phase>
 								<goals>
 									<goal>report</goal>
 								</goals>
-							</execution>
-							<execution>
-								<id>report-integration-tests</id>
-								<phase>post-integration-test</phase>
-								<goals>
-									<goal>report-integration</goal>
-								</goals>
-							</execution-->
-						</executions>
-					</plugin>
-					<plugin>
-						<artifactId>maven-dependency-plugin</artifactId>
-						<executions>
-							<execution>
-								<id>copy-dependencies</id>
-								<phase>package</phase>
-								<goals>
-									<goal>copy-dependencies</goal>
-								</goals>
-								<configuration>
-									<outputDirectory>${project.build.directory}/libraries</outputDirectory>
-									<overWriteReleases>false</overWriteReleases>
-									<overWriteSnapshots>false</overWriteSnapshots>
-									<overWriteIfNewer>true</overWriteIfNewer>
-								</configuration>
 							</execution>
 						</executions>
 					</plugin>
@@ -133,10 +89,6 @@
 			<properties>
 				<sonar.host.url>https://sonarcloud.io</sonar.host.url>
 				<sonar.organization>vsfexperts</sonar.organization>
-				<sonar.java.binaries>target/classes</sonar.java.binaries>
-				<sonar.java.test.binaries>target/test-classes</sonar.java.test.binaries>
-				<sonar.java.libraries>target/libraries</sonar.java.libraries>
-				<sonar.java.test.libraries>target/libraries</sonar.java.test.libraries>
 			</properties>
 			<build>
 				<plugins>
@@ -245,15 +197,9 @@
 				</plugin>
 				<plugin>
 					<artifactId>maven-surefire-plugin</artifactId>
-					<configuration>
-						<argLine>@{argLine} @{surefireArgLine} -DjacocoArgs="@{surefireArgLine}" </argLine>
-					</configuration>
 				</plugin>
 				<plugin>
 					<artifactId>maven-failsafe-plugin</artifactId>
-					<configuration>
-						<argLine>@{argLine} @{failsafeArgLine} -DjacocoArgs="@{failsafeArgLine}" </argLine>
-					</configuration>
 				</plugin>
 				<plugin>
 					<groupId>de.vsfexperts.rbac</groupId>
