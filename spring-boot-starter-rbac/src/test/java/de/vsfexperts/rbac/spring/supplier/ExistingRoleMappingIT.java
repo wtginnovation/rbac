@@ -2,7 +2,7 @@ package de.vsfexperts.rbac.spring.supplier;
 
 import static java.util.Collections.emptySet;
 import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertThat;
+import static org.hamcrest.MatcherAssert.assertThat;
 
 import java.util.HashMap;
 import java.util.Map;

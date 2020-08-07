@@ -2,8 +2,8 @@ package de.vsfexperts.rbac.configuration.io;
 
 import static org.hamcrest.CoreMatchers.hasItem;
 import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertThat;
 import static org.junit.Assert.fail;
+import static org.hamcrest.MatcherAssert.assertThat;
 
 import java.io.IOException;
 import java.util.Set;
@@ -17,7 +17,6 @@ import org.springframework.core.io.ClassPathResource;
 import de.vsfexperts.rbac.configuration.domain.Privilege;
 import de.vsfexperts.rbac.configuration.domain.Role;
 import de.vsfexperts.rbac.configuration.domain.RoleMapping;
-import de.vsfexperts.rbac.configuration.io.YamlLoader;
 
 public class YamlLoaderTest {
 

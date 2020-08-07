@@ -4,10 +4,8 @@ open module de.vsfexperts.rbac.sample {
 	requires transitive de.vsfexperts.rbac.spring;
 
 	requires org.apache.tomcat.embed.core;
-	requires org.apache.tomcat.embed.jasper.el;
 	requires org.apache.tomcat.embed.websocket;
 
-	requires com.fasterxml.classmate;
 	requires com.fasterxml.jackson.annotation;
 	requires com.fasterxml.jackson.core;
 	requires com.fasterxml.jackson.databind;
@@ -17,9 +15,6 @@ open module de.vsfexperts.rbac.sample {
 	requires java.annotation;
 	requires java.instrument;
 	requires java.sql;
-	requires java.validation;
-	requires org.hibernate.validator;
-	requires org.jboss.logging;
 	requires spring.boot.starter.json;
 	requires spring.boot.starter.tomcat;
 	requires spring.boot.starter.web;
